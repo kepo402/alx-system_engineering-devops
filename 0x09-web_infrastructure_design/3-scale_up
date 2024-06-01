@@ -1,0 +1,27 @@
+# Web Infrastructure Design: Scaling Up with HAProxy Cluster
+
+## Overview
+This setup involves scaling up the web infrastructure by adding a load balancer (HAProxy) configured as a cluster to ensure high availability and redundancy. The components are split into separate servers for improved performance, isolation, and scalability.
+
+## Components
+### Load Balancer (HAProxy) Cluster
+
+Purpose: Distributes incoming web traffic across multiple servers to ensure load balancing, high availability, and fault tolerance.
+Configuration: HAProxy is configured as a cluster with multiple instances to provide redundancy and eliminate single points of failure.
+Why Add: Load balancers enhance the scalability and reliability of the infrastructure by evenly distributing traffic and efficiently managing server resources.
+
+### Web Server
+
+Purpose: Handles HTTP requests, serves static content, and acts as a reverse proxy to the application servers.
+Why Separate: Isolating the web server allows for dedicated resource allocation, improved security, and easier maintenance.
+
+### Application Server
+
+Purpose: Hosts the application codebase, processes dynamic content, and executes business logic.
+Why Separate: Separating the application server ensures efficient resource utilization, scalability, and flexibility in managing application-specific configurations and updates.
+
+### Database Server
+
+Purpose: Stores and manages application data.
+Why Separate: Isolating the database server improves security, performance, and scalability by dedicating resources solely to data storage and management.
+
